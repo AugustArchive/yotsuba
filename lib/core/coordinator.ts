@@ -12,9 +12,7 @@ export default class Coordinator {
     }
 
     async run() {
-        process.stdout.write('\r\n');
         process.stdout.write(`[${colors.cyan('Hiei')}] Starting ${colors.gray(this.tasks.size.toString())} tasks...\n`);
-
         const results = {
             passed: 0,
             failed: 0
@@ -23,7 +21,7 @@ export default class Coordinator {
             const result = await t.run();
             if (!result) results.failed++;
             else results.passed++;
-            process.stdout.write(`[${colors.cyan(`${i}/${this.tasks.size}`)}] ${result === false? `Task ${t.name} has failed.`: `Task ${t.name} has been successful`}\n`);
+            process.stdout.write(`[${colors.cyan(this.tasks.size.toString())}] ${result === false? `Task ${t.name} has failed.`: `Task ${t.name} has been successful`}\n`);
         });
     }
 }

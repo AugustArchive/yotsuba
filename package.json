@@ -1,8 +1,8 @@
 {
     "name": "@yamashiro/hiei",
     "description": "Automation library exclusive to Yamashiro-related projects",
-    "version": "0.0.1",
-    "main": "build/index.js",
+    "version": "0.0.2",
+    "main": "dist/index.js",
     "types": "index.d.ts",
     "repository": {
         "type": "git",
