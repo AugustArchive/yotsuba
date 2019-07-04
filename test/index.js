@@ -13,7 +13,7 @@ coordinator
     .register({
         name: 'version',
         run: () => {
-            const result = shell.executeSync('node', ['-v']);
+            const result = shell.execSync('node', ['-v']);
             if (!result) return false;
             return true;
         }

@@ -1,7 +1,7 @@
 import { exec, execSync } from 'child_process';
 
 export default class Shell {
-    execute(code: string, paramaters?: string[]) {
+    exec(code: string, paramaters?: string[]) {
         return new Promise<boolean>((resolve) => {
             const params = (paramaters !== undefined && Array.isArray(paramaters) && paramaters.length > 0)? paramaters.join(' '): '';
             exec(`${code} ${params}`, (error: Error | null, out: string) => {
@@ -15,7 +15,7 @@ export default class Shell {
         });
     }
 
-    executeSync(code: string, paramaters?: string[]): boolean {
+    execSync(code: string, paramaters?: string[]): boolean {
         const params = (paramaters !== undefined && Array.isArray(paramaters) && paramaters.length > 0)? paramaters.join(' '): '';
         
         try {

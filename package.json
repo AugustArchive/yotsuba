@@ -1,12 +1,13 @@
 {
-    "name": "@yamashiro/hiei",
-    "description": "Automation library exclusive to Yamashiro-related projects",
-    "version": "0.0.2",
+    "name": "yotsuba",
+    "description": "Automation library in TypeScript",
+    "version": "0.0.3",
     "main": "dist/index.js",
     "types": "index.d.ts",
+    "homepage": "https://docs.augu.dev/yotsuba",
     "repository": {
         "type": "git",
-        "url": "https://github.com/YamashiroBot/hiei"
+        "url": "https://github.com/auguwu/yotsuba"
     },
     "dependencies": {
         "@augu/immutable": "0.0.1"

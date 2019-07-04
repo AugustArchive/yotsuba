@@ -1,16 +1,16 @@
 <table style="width: 100%; border-style: none;"><tr>
-<td style="width: 140px; text-align: center;"><img width="128px" src="./assets/Hiei.png" alt="Akashi">
+<td style="width: 140px; text-align: center;"><img width="128px" src="./assets/Yotsuba.jpg" alt="Yotsuba">
 </td>
 <td style="width: 140px; text-align: center;">
-<strong>Hiei</strong><br/>
-<i>Automation library for Yamashiro-related projects made in TypeScript</i>
+<strong>Yotsuba</strong><br/>
+<i>:clipboard: Automation library made in TypeScript</i>
 </td>
 </tr></table>
 
 ## Usage
 
 ```js
-const { Coordinator, Shell } = require('@yamashiro/hiei');
+const { Coordinator, Shell } = require('yotsuba');
 const coordinator = new Coordinator();
 const shell = new Shell();
 
@@ -34,9 +34,7 @@ coordinator
 
 ## License
 
-> [hiei](https://github.com/YamashiroBot/hiei) is made by auguwu and released under the MIT license
->
-> Art used in this project is made by [Criin](https://www.pixiv.net/member.php?id=4460847)
+> [Yotsuba](https://github.com/auguwu/yotsuba) is made by auguwu and released under the MIT license
 
 ```
 Copyright (c) 2019-present auguwu
