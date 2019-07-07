@@ -16,7 +16,7 @@ declare module 'yotsuba' {
          * Registers a task
          * @param info Additional options to add-on to
          */
-        public register(callback: () => Promise<boolean> | boolean): this;
+        public register(callback: () => boolean): this;
 
         /**
          * A promise-based run function.

@@ -2,7 +2,7 @@ import { stripIndents } from 'common-tags';
 import { Collection } from '@augu/immutable';
 import colors from '../util/colors';
 
-export type Task = () => Promise<boolean> | boolean;
+export type Task = () => boolean;
 export interface Results {
     passed: number;
     failed: number;
