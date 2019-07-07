@@ -1,10 +1,9 @@
 declare module 'yotsuba' {
-    import { Collection } from '@augu/immutable';
-
     /**
      * The current version of Yotsuba
      */
     export const version: string;
+    
     export class Coordinator {
         /**
          * Creates a new instance of the `Coordinator` instance.
@@ -13,14 +12,11 @@ declare module 'yotsuba' {
          */
         constructor();
 
-        /** A collection of tasks */
-        public tasks: Collection<Task>;
-
         /**
          * Registers a task
          * @param info Additional options to add-on to
          */
-        public register(info: TaskOptions): this;
+        public register(callback: () => Promise<boolean> | boolean): this;
 
         /**
          * A promise-based run function.
@@ -29,6 +25,7 @@ declare module 'yotsuba' {
          */
         public run(): Promise<void>;
     }
+
     export class Shell {
         /**
          * Creates a new instance of the `Shell` utility
@@ -50,24 +47,5 @@ declare module 'yotsuba' {
          * @param params The other paramaters after the command's name
          */
         public execSync(code: string, params?: string[]): boolean;
-    }
-    export class Task {
-        /**
-         * Creates a new instance of the `Task` interface
-         * 
-         * This is the central of all tasks
-         * @param info The information to add-on
-         */
-        constructor(info: TaskOptions);
-
-        /** The task's name */
-        public name: string;
-
-        /** The task's process */
-        public run: () => Promise<boolean>;
-    }
-    export interface TaskOptions {
-        name: string;
-        run: () => Promise<boolean>;
     }
 }

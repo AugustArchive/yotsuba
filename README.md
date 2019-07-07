@@ -3,7 +3,7 @@
 </td>
 <td style="width: 140px; text-align: center;">
 <strong>Yotsuba</strong><br/>
-<i>:clipboard: Automation library made in TypeScript</i>
+<i>Automation library made in TypeScript</i>
 </td>
 </tr></table>
 
