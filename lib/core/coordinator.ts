@@ -10,6 +10,7 @@ export interface Results {
 
 export default class Coordinator {
     public tasks: Collection<Task> = new Collection({ name: 'coordinator:tasks' });
+    
     register(t: Task) {
         const size = this.tasks.size;
         this.tasks.set(size, t);
@@ -17,11 +18,11 @@ export default class Coordinator {
     }
 
     printResult(results: Results) {
-        const passed = (results.passed / this.tasks.size) * 100;
-        const failed = (results.failed / this.tasks.size) * 100;
+        const passed = Math.round((results.passed / this.tasks.size) * 100);
+        const failed = Math.round((results.failed / this.tasks.size) * 100);
         process.stdout.write(stripIndents`
             ${colors.gray('Results:')}
-            -+-+-+-+-+-+-+-+-+
+            ================
             Passed: ${colors.green(results.passed.toString())} (${colors.magenta(passed.toString())}%)
             Failed: ${colors.red(results.failed.toString())} (${colors.magenta(failed.toString())}%)
         `);
@@ -32,11 +33,12 @@ export default class Coordinator {
         const results: Results = { passed: 0, failed: 0 };
         for (let i = 0; i < this.tasks.size; i++) {
             const task   = this.tasks.get(i)!;
-            const result = await task();
+            const result = task();
             if (!result) results.failed++;
             else results.passed++;
             process.stdout.write(`${colors.cyan('Yotsuba>')} ${!result? `Task #${i} has failed`: `Task #${i} has been successful!`}\n`);
         }
+
         this.printResult(results);
     }
 }

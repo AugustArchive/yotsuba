@@ -15,19 +15,18 @@ const coordinator = new Coordinator();
 const shell = new Shell();
 
 coordinator
-    .register({
-        name: 'clone',
-        run: () => {
-            const cd = shell.executeSync('cd', ['..']);
-            if (!cd) return false;
-            const cd2 = shell.executeSync('cd', ['dist']);
-            if (!cd2) return false;
-            const clone = shell.executeSync('git', ['clone', 'https://github.com/ohlookitsderpy/leeks.js']);
-            if (!clone) return false;
+    .register(() => {
+        const cd = shell.execSync('cd', ['..']);
+        if (!cd) return false;
+        
+        const cd2 = shell.execSync('cd', ['dist']);
+        if (!cd2) return false;
+        
+        const clone = shell.execSync('git', ['clone', 'https://github.com/ohlookitsderpy/leeks.js', 'leeks']);
+        if (!clone) return false;
 
-            console.log('Cloned leeks.js to dist folder!');
-            return true;
-        }
+        console.log('Cloned leeks.js to dist folder!');
+        return true;
     })
     .run();
 ```
