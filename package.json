@@ -3,6 +3,11 @@
     "description": "Automation library in TypeScript",
     "version": "0.0.5",
     "main": "dist/index.js",
+    "files": [
+        "dist",
+        "index.d.ts",
+        "package.json"
+    ],
     "types": "index.d.ts",
     "homepage": "https://docs.augu.dev/Yotsuba",
     "repository": {
