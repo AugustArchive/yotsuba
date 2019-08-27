@@ -31,6 +31,19 @@ coordinator
     .run();
 ```
 
+## CLI Usage
+> In `0.0.7+`, it's now possible to initialize and run projects with Yotsuba's CLI Utility
+>
+> To use it, run `npm i -g yotsuba` to **globally** install Yotsuba
+
+```sh
+# Run all tasks
+$ yotsuba
+
+# Initialize a new Yotsuba project
+$ yotsuba init
+```
+
 ## License
 
 > [Yotsuba](https://github.com/auguwu/yotsuba) is made by auguwu and released under the MIT license
